@@ -1,0 +1,348 @@
+<robot name="kamyon">
+    <link name="govde1">
+        <visual>
+            <geometry>
+                <mesh filename="package://kamyon/meshes/body.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+
+            <origin xyz="0 0 2" rpy="0 0.0 0"/>
+
+            <material name="green">
+                <color rgba="0 1 0 1"/>
+            </material> 
+        </visual>  
+        <collision>
+            <geometry>   
+                   <mesh filename="package://kamyon/meshes/body.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+            <origin  xyz="0 -1 2" rpy="0.0 0.0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value="10"/>
+            <inertia ixx="31.218" ixy="0.0" ixz="0.0" iyy="31.218" iyz="0.0" izz="31.218"/>
+        </inertial>
+    </link>
+    <!--
+    <joint name="kabin_joint" type="fixed"> 
+        <parent link="govde1"/>
+        <child link="govde2"/>
+        <origin  xyz="0 0 0.2"/>
+        <limit lower="0.0" upper="0.0" effort="300" velocity="0.1"/>
+        
+    </joint>
+
+     <link name="govde2">
+        <visual>
+            <geometry>
+                <box size="1 0.5 0.4"/>
+            </geometry>
+
+            <origin xyz="0 0.75 0.2"/>
+
+            <material name="green">
+                <color rgba="0 1 0 1"/>
+            </material>
+        </visual>  
+        <collision>
+            <geometry>
+                <box size="1 0.5 0.4"/> 
+            </geometry>
+            <origin  xyz="0 0.75 0.2"/>
+        </collision>
+
+        <inertial>
+            <mass value="50"/>
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+        </inertial>
+    </link>
+-->
+
+       <joint name="teker1_joint" type="continuous">
+        <origin  xyz="0 -2 2" />
+        <parent link="govde1"/>
+        <child link="teker1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="0.0" upper="0.0" effort="3000.0" velocity="10.0"/>
+       
+    </joint>
+
+    <link name="teker1">
+        <visual>
+            <geometry>
+                <mesh filename="package://kamyon/meshes/wheel_front.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+
+           <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>  
+        <collision>
+            <geometry>
+                <mesh filename="package://kamyon/meshes/wheel_front.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+           <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+        </collision>
+
+        <inertial>
+           <mass value="1"/>
+           <inertia ixx="0.44" ixy="0.0" ixz="0.0" iyy="0.44" iyz="0.0" izz="0.72"/>
+        </inertial>
+    </link>
+
+
+    <joint name="teker2_joint" type="continuous">
+        <origin  xyz="0 2 2" />
+        <parent link="govde1"/>
+        <child link="teker2"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="0.0" upper="0.0" effort="3000.0" velocity="10.0"/>
+       
+    </joint>
+
+    <link name="teker2">
+        <visual>
+            <geometry>
+                <mesh filename="package://kamyon/meshes/wheel_front.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+
+           <origin xyz="0 0 0" rpy="3.14 0.0 0.0"/>
+
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>  
+        <collision>
+            <geometry>
+                <mesh filename="package://kamyon/meshes/wheel_front.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+           <origin xyz="0 0 0" rpy="3.14 0.0 0.0"/>
+        </collision>
+
+        <inertial>
+         <mass value="1"/>
+           <inertia ixx="0.44" ixy="0.0" ixz="0.0" iyy="0.44" iyz="0.0" izz="0.72"/>
+        </inertial>
+    </link>
+
+
+    <joint name="teker3_joint" type="continuous">
+        <origin  xyz="4.08 -2 2" />
+        <parent link="govde1"/>
+        <child link="teker3"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="0.0" upper="0.0" effort="3000.0" velocity="10.0"/>
+       
+    </joint>
+    <link name="teker3">
+        <visual>
+            <geometry>
+                  <mesh filename="package://kamyon/meshes/wheel_back.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+
+           <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>  
+        <collision>
+            <geometry>
+                <mesh filename="package://kamyon/meshes/wheel_back.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+           <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+        </collision>
+
+        <inertial>
+         <mass value="1"/>
+           <inertia ixx="0.54" ixy="0.0" ixz="0.0" iyy="0.54" iyz="0.0" izz="0.72"/>
+        </inertial>
+    </link>
+
+
+    <joint name="teker4_joint" type="continuous">
+        <origin  xyz="4.08 2 2" />
+        <parent link="govde1"/>
+        <child link="teker4"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="0.0" upper="0.0" effort="3000.0" velocity="10.0"/>
+       
+    </joint>
+
+    <link name="teker4">
+        <visual>
+            <geometry>
+               <mesh filename="package://kamyon/meshes/wheel_back.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+
+           <origin xyz="0 0 0" rpy="3.14 0.0 0.0"/>
+
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>  
+        <collision>
+            <geometry>
+                <mesh filename="package://kamyon/meshes/wheel_back.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+           <origin xyz="0 0 0" rpy="3.14 0.0 0.0"/>
+        </collision>
+
+        <inertial>
+       <mass value="1"/>
+           <inertia ixx="0.54" ixy="0.0" ixz="0.0" iyy="0.54" iyz="0.0" izz="0.72"/>
+        </inertial>
+    </link>
+
+    <joint name="kasa_joint" type="revolute">
+        <origin xyz="4.6 0 3.1" />
+        <parent link="govde1"/>
+        <child link="kasa"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit lower="0.0" upper="1.10" effort="3000" velocity= "100.0"/>
+    </joint>
+
+    <link name="kasa">
+        <inertial>
+            <mass value="5"/>
+            <inertia ixx="29.93" ixy="0.0" ixz="0.0" iyy="29.93" iyz="0.0" izz="29.93"/>
+        </inertial>
+        <visual >
+            <origin xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://kamyon/meshes/dumper.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://kamyon/meshes/dumper.dae" scale="0.05 0.05 0.05"/>
+            </geometry>
+        </collision>
+    </link>
+    
+<!--
+    <joint name="cam_joint" type="fixed">
+        <origin xyz="0.0 0.35 0.22" />
+        <parent link="govde2"/>
+        <child link="cam"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+
+    <link name="cam">
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+        </inertial>
+        <visual >
+            <origin xyz="0.0 0.65 0.0" />
+            <geometry>
+                <box size="0.95 0.02 0.2"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1.0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.5 0.0" />
+            <geometry>
+                <box size="0.95 0.02 0.2"/>
+            </geometry>
+        </collision>
+    </link>
+-->
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/kamyon</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        </plugin>
+    </gazebo>
+
+    <transmission name="tran1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="teker1_joint">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor1">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="tran2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="teker2_joint">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor2">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="tran3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="teker3_joint">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor3">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="tran4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="teker4_joint">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor4">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="tran5">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="kasa_joint">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor4">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>4</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <gazebo reference="govde1">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+    <gazebo reference="govde2">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+    <gazebo reference="teker1">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="teker2">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="teker3">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="teker4">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="kasa">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+
+  
+
+   
+
+</robot>
